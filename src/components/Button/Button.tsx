@@ -1,5 +1,7 @@
+import "../../tailwind.css"
+
 interface ButtonProps {
-  label: string;
+  label: string
 }
 
 const Button = ({ label }: ButtonProps ) => {
