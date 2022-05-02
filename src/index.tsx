@@ -1,1 +1,3 @@
- export * from "./components/Button"
+import "./tailwind.css";
+
+export * from "./components/Button"
