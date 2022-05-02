@@ -1,7 +1,18 @@
 {
   "name": "react-tailblocks",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "types": "dist/index.d.ts",
+  "module": "dist/react-tailblocks.esm.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/react-tailblocks.es.js",
+      "require": "./dist/react-tailblocks.esm.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -15,6 +26,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
+    "@rollup/plugin-typescript": "^8.3.2",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.4.22",
