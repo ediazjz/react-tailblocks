@@ -1,6 +1,8 @@
 {
-  "name": "react-tailblocks",
-  "private": true,
+  "name": "@ediazjz/react-tailblocks",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/ediazjz"
+  },
   "version": "0.1.0",
   "types": "dist/index.d.ts",
   "module": "dist/react-tailblocks.esm.js",
