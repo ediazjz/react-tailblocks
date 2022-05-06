@@ -1,0 +1,56 @@
+name: Issue Automation
+
+on:
+  issues:
+    types: [opened, assigned, connected, closed, reopened]
+
+jobs:
+  issue-opened:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'opened'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: React Tailblocks
+          column: To do
+          repo-token: ${{ secrets.AUTOMATION_TOKEN }}
+
+  issue-assigned:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'assigned'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: React Tailblocks
+          column: In progress
+          repo-token: ${{ secrets.AUTOMATION_TOKEN }}
+
+  issue-connected:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'connected'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: React Tailblocks
+          column: Review in progress
+          repo-token: ${{ secrets.AUTOMATION_TOKEN }}
+
+  issue-closed:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'closed'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: React Tailblocks
+          column: Done
+          repo-token: ${{ secrets.AUTOMATION_TOKEN }}
+
+  issue-reopened:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'reopened'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: React Tailblocks
+          column: To do
+          repo-token: ${{ secrets.AUTOMATION_TOKEN }}
