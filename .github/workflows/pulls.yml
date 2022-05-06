@@ -1,0 +1,27 @@
+name: Pull Request Automation
+
+on:
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  pull-request-opened:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'review_requested'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: React Tailblocks
+          column: Review in progress
+          repo-token: ${{ secrets.AUTOMATION }}
+
+  pull-request-closed:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'closed'
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: React Tailblocks
+          column: Done
+          action: archive
+          repo-token: ${{ secrets.AUTOMATION }}
