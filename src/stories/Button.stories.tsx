@@ -1,5 +1,7 @@
 import { Meta, Story } from '@storybook/react';
+
 import { Button } from '../components';
+import "../tailwind.css"
 
 const meta: Meta = {
   title: 'Components/Button',

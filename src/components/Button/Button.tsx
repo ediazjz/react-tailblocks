@@ -1,5 +1,3 @@
-import "../../tailwind.css"
-
 type ButtonOwnProps<E extends React.ElementType = React.ElementType> = {
   label: string
   as?: E
